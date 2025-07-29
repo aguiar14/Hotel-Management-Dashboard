@@ -1,0 +1,205 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\controllers\\put\\roomput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\put\\roomput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\controllers\\post\\roompost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\post\\roompost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\data\\entities\\roomentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\data\\entities\\roomentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\data\\entities\\roomtypeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\data\\entities\\roomtypeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\models\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\controllers\\put\\roomtypeput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\put\\roomtypeput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\controllers\\post\\roomtypepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\post\\roomtypepost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoomTypeEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Entities\\RoomTypeEntity.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\Entities\\RoomTypeEntity.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Entities\\RoomTypeEntity.cs",
+              "RelativeToolTip": "Backend\\Data\\Entities\\RoomTypeEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T10:06:34.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Room.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Models\\Room.cs",
+              "RelativeToolTip": "Backend\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:35:04.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Models\\RoomType.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\RoomType.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Models\\RoomType.cs",
+              "RelativeToolTip": "Backend\\Models\\RoomType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:37:31.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoomEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Entities\\RoomEntity.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\Entities\\RoomEntity.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Entities\\RoomEntity.cs",
+              "RelativeToolTip": "Backend\\Data\\Entities\\RoomEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:59:48.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoomPost.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Post\\RoomPost.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\Post\\RoomPost.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Post\\RoomPost.cs",
+              "RelativeToolTip": "Backend\\Controllers\\Post\\RoomPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:43:18.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomPut.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Put\\RoomPut.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\Put\\RoomPut.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Put\\RoomPut.cs",
+              "RelativeToolTip": "Backend\\Controllers\\Put\\RoomPut.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:48:05.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoomTypePost.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Post\\RoomTypePost.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\Post\\RoomTypePost.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Post\\RoomTypePost.cs",
+              "RelativeToolTip": "Backend\\Controllers\\Post\\RoomTypePost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:54:26.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoomTypePut.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Put\\RoomTypePut.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\Put\\RoomTypePut.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\Put\\RoomTypePut.cs",
+              "RelativeToolTip": "Backend\\Controllers\\Put\\RoomTypePut.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T09:54:43.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T07:17:44.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T07:27:59.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Backend\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\WeatherForecast.cs",
+              "RelativeToolTip": "Backend\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T07:17:52.93Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
