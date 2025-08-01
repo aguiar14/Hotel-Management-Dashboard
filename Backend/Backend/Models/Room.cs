@@ -1,4 +1,6 @@
-﻿namespace Backend.Models
+﻿using Backend.Data.Entities;
+
+namespace Backend.Models
 {
     public class Room
     {
@@ -8,7 +10,8 @@
         public int Capacity { get; set; }
         public decimal PricePerNight { get; set; }
         public bool IsAvailable { get; set; } = true;
-        public int RoomTypeId { get; set; }
+        public required RoomType RoomType { get; set; }
+      
 
 
     }

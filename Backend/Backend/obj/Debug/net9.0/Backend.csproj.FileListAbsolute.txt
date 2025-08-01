@@ -25,7 +25,6 @@ C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\D
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\Backend.csproj.Up2Date
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\Backend.dll
 C:\Users\Deina\Documents\GitHub\Hotel-Management-Dashboard\Backend\Backend\obj\Debug\net9.0\refint\Backend.dll
