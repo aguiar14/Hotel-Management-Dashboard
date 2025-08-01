@@ -10,19 +10,20 @@ namespace Backend.Controllers.Put
         public int Capacity { get; set; } = 1;
         public decimal PricePerNight { get; set; }
         public bool IsAvailable { get; set; } = true;
-        public int RoomTypeId { get; set; } 
+        public required RoomType RoomType { get; set; }
         // Additional properties can be added here if needed
 
-        public Room ToRoomModel()
+        public Room ToRoomModel(int id)
         {
             return new Room
             {
+                Id = id,
                 Number = this.Number,
                 Description = this.Description,
                 Capacity = this.Capacity,
                 PricePerNight = this.PricePerNight,
                 IsAvailable = this.IsAvailable,
-                RoomTypeId = this.RoomTypeId
+                RoomType = this.RoomType
             };
 
         }

@@ -1,9 +1,22 @@
+
+
+
+using Backend;
+using Microsoft.EntityFrameworkCore;
+using Backend.Interfaces;
+using Backend.Data.Repositories;
+using DbContext = Backend.DbContext;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<DbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//builder.Services.AddTransient<IRoomRepository, RoomSqlServerRepository>();
+//builder.Services.AddTransient<IRoomTypeRepository, RoomTypeSqlServerRepository>();
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
