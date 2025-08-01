@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Backend.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Backend.Data.Entities
 {
@@ -12,6 +13,8 @@ namespace Backend.Data.Entities
         public decimal PricePerNight { get; set; }
         public bool IsAvailable { get; set; } = true;
         public int RoomTypeId { get; set; }
+
+        public required RoomTypeEntity RoomType { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }
