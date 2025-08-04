@@ -4,6 +4,7 @@ using Backend;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(DbContext))]
-    partial class DbContextModelSnapshot : ModelSnapshot
+    [Migration("20250804130503_SeedRoomType")]
+    partial class SeedRoomType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,44 +68,6 @@ namespace Backend.Migrations
                     b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Capacity = 1,
-                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "A cozy single room with a comfortable bed.",
-                            IsAvailable = true,
-                            Number = "101",
-                            PricePerNight = 100.00m,
-                            RoomTypeId = 1,
-                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Capacity = 2,
-                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "A spacious double room with two beds.",
-                            IsAvailable = true,
-                            Number = "102",
-                            PricePerNight = 150.00m,
-                            RoomTypeId = 2,
-                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Capacity = 2,
-                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "A luxurious suite with a king-size bed and a view.",
-                            IsAvailable = true,
-                            Number = "103",
-                            PricePerNight = 300.00m,
-                            RoomTypeId = 3,
-                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Backend.Data.Entities.RoomTypeEntity", b =>
