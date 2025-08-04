@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-//builder.Services.AddTransient<IRoomRepository, RoomSqlServerRepository>();
+builder.Services.AddTransient<IRoomRepository, RoomSqlServerRepository>();
 //builder.Services.AddTransient<IRoomTypeRepository, RoomTypeSqlServerRepository>();
 
 builder.Services.AddControllers();
