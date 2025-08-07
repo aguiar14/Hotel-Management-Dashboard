@@ -65,6 +65,44 @@ namespace Backend.Migrations
                     b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Capacity = 1,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A cozy single room with a comfortable bed.",
+                            IsAvailable = true,
+                            Number = "101",
+                            PricePerNight = 100.00m,
+                            RoomTypeId = 1,
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Capacity = 2,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A spacious double room with two beds.",
+                            IsAvailable = true,
+                            Number = "102",
+                            PricePerNight = 150.00m,
+                            RoomTypeId = 2,
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Capacity = 2,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A luxurious suite with a king-size bed and a view.",
+                            IsAvailable = true,
+                            Number = "103",
+                            PricePerNight = 300.00m,
+                            RoomTypeId = 3,
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Backend.Data.Entities.RoomTypeEntity", b =>
@@ -94,6 +132,32 @@ namespace Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RoomTypes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A room for one person.",
+                            Name = "Single",
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A room for two persons.",
+                            Name = "Double",
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "A luxurious suite with additional amenities.",
+                            Name = "Suite",
+                            UpdatedAt = new DateTime(2025, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Backend.Data.Entities.RoomEntity", b =>

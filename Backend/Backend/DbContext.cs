@@ -14,7 +14,10 @@ namespace Backend
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<RoomEntity>().ToTable("Rooms");
+
 
             modelBuilder.Entity<RoomEntity>().HasKey(r => r.Id);
 
@@ -47,6 +50,7 @@ namespace Backend
                 .ToTable("RoomTypes");
 
 
+
             modelBuilder.Entity<RoomTypeEntity>().HasKey(rt => rt.Id);
 
             modelBuilder.Entity<RoomTypeEntity>()
@@ -68,7 +72,81 @@ namespace Backend
 
 
 
-            base.OnModelCreating(modelBuilder);
+
+
+            // Seed data
+
+            modelBuilder.Entity<RoomTypeEntity>().HasData(
+                new RoomTypeEntity
+                {
+                    Id = 1,
+                    Name = "Single",
+                    Description = "A room for one person.",
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                },
+                new RoomTypeEntity
+                {
+                    Id = 2,
+                    Name = "Double",
+                    Description = "A room for two persons.",
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                },
+                new RoomTypeEntity
+                {
+                    Id = 3,
+                    Name = "Suite",
+                    Description = "A luxurious suite with additional amenities.",
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                }
+            );
+
+            // In the .HasData() calls for RoomEntity, set RoomType to null to satisfy the required property for seeding.
+            // EF Core will not use navigation properties during seeding, so setting RoomType = null is correct.
+
+            modelBuilder.Entity<RoomEntity>().HasData(
+                new RoomEntity
+                {
+                    Id = 1,
+                    Number = "101",
+                    Description = "A cozy single room with a comfortable bed.",
+                    Capacity = 1,
+                    PricePerNight = 100.00m,
+                    IsAvailable = true,
+                    RoomTypeId = 1,
+                    RoomType = null!,
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                },
+                new RoomEntity
+                {
+                    Id = 2,
+                    Number = "102",
+                    Description = "A spacious double room with two beds.",
+                    Capacity = 2,
+                    PricePerNight = 150.00m,
+                    IsAvailable = true,
+                    RoomTypeId = 2,
+                    RoomType = null!,
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                },
+                new RoomEntity
+                {
+                    Id = 3,
+                    Number = "103",
+                    Description = "A luxurious suite with a king-size bed and a view.",
+                    Capacity = 2,
+                    PricePerNight = 300.00m,
+                    IsAvailable = true,
+                    RoomTypeId = 3,
+                    RoomType = null!,
+                    CreatedAt = new DateTime(2025, 8, 4),
+                    UpdatedAt = new DateTime(2025, 8, 4)
+                }
+            );
         }
 
 
