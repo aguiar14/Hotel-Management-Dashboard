@@ -25,7 +25,6 @@ export class RoomDataSource extends DataSource<Room> {
     this._roomService.getAll().subscribe(
       (response: ApiResponse<Room>) => {
         this.setData(response.items);
-        console.log(response);
       },
       (error) => {
         console.error('erro geting rooms', error);

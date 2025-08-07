@@ -127,5 +127,134 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.RoomTypeController",
+    "Method": "Add",
+    "RelativePath": "api/RoomType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomType",
+        "Type": "Backend.Controllers.Post.RoomTypePost",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.RoomType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.RoomTypeController",
+    "Method": "Get",
+    "RelativePath": "api/RoomType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.ApiResponse\u00601[[Backend.Models.RoomType, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.RoomTypeController",
+    "Method": "GetById",
+    "RelativePath": "api/RoomType/{roomTypeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomTypeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.RoomType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.RoomTypeController",
+    "Method": "Update",
+    "RelativePath": "api/RoomType/{roomTypeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomType",
+        "Type": "Backend.Controllers.Put.RoomTypePut",
+        "IsRequired": true
+      },
+      {
+        "Name": "roomTypeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Backend.Models.RoomType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Backend.Controllers.RoomTypeController",
+    "Method": "DeleteRoomType",
+    "RelativePath": "api/RoomType/{roomTypeId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomTypeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Backend.Models.RoomType, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
