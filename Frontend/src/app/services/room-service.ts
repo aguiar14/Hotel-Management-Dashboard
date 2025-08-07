@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room } from '../models/room.model';
 import { ApiResponse } from '../models/apiresponse.model';
+import { RoomsFilter } from '../pages/room/rooms.filter';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,14 @@ export class RoomService {
 
   constructor(private httpclient: HttpClient) {}
 
-  getAll() {
-    return this.httpclient.get<ApiResponse<Room>>(this.apiUrl);
+  getAll(filter: RoomsFilter): Observable<ApiResponse<Room>> {
+    return this.httpclient.get<ApiResponse<Room>>(this.apiUrl, {
+      params: {
+        roomType: filter.type,
+        isAvailable: filter.status,
+        capacity: filter.capacity,
+      },
+    });
   }
 
   add(room: Room): Observable<any> {

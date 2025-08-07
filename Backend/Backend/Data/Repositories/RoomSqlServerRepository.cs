@@ -58,29 +58,45 @@ namespace Backend.Data.Repositories
             return room;
 
         }
-        public async Task<ApiResponse<Room>> GetRoomsAsync()
+        public async Task<ApiResponse<Room>> GetRoomsAsync(int roomType, int isAvailable, int capacity)
         {
             IQueryable<RoomEntity> query = _context.Room;
 
             var count = await query.CountAsync();
-            var items = await query
-                .Select(r => new Room
-                {
-                    Id = r.Id,
-                    Number = r.Number,
-                    Description = r.Description,
-                    Capacity = r.Capacity,
-                    PricePerNight = r.PricePerNight,
-                    IsAvailable = r.IsAvailable,
-                    RoomType = new RoomType
-                    {
-                        Id = r.RoomType.Id,
-                        Name = r.RoomType.Name,
-                        Description = r.RoomType.Description
-                    },
 
-                })
-                .ToListAsync();
+            if(roomType != -1)
+            {
+                  query = query.Where(r => r.RoomTypeId == roomType);
+            }
+
+            if(isAvailable != -1)
+            {
+                query = query.Where(r => r.IsAvailable == (isAvailable == 1));
+            }
+
+            if(capacity != -1 && capacity <= 5)
+            {
+                query = query.Where(r => r.Capacity == capacity);
+            }else if(capacity > 5) { query = query.Where(r => r.Capacity > 5); }
+
+            var items = await query
+                    .Select(r => new Room
+                    {
+                        Id = r.Id,
+                        Number = r.Number,
+                        Description = r.Description,
+                        Capacity = r.Capacity,
+                        PricePerNight = r.PricePerNight,
+                        IsAvailable = r.IsAvailable,
+                        RoomType = new RoomType
+                        {
+                            Id = r.RoomType.Id,
+                            Name = r.RoomType.Name,
+                            Description = r.RoomType.Description
+                        },
+
+                    })
+                    .ToListAsync();
 
             return new ApiResponse<Room> { items = items, TotalCount = count };
         }

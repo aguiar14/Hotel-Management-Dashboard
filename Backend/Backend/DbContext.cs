@@ -44,7 +44,7 @@ namespace Backend
                 .HasDefaultValue(true);
 
 
-            //--------------------------------
+            //------------------Room Type --------------
 
             modelBuilder.Entity<RoomTypeEntity>()
                 .ToTable("RoomTypes");
@@ -71,7 +71,30 @@ namespace Backend
             .IsRequired();
 
 
+            //------------------Customer  --------------
 
+            modelBuilder.Entity<CustomerEntity>().ToTable("Customers");
+
+            modelBuilder.Entity<CustomerEntity>().HasKey(c => c.Id);
+
+            modelBuilder.Entity<CustomerEntity>().Property(c => c.FirstName)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            modelBuilder.Entity<CustomerEntity>().Property(c => c.LastName)
+                .IsRequired();
+
+            modelBuilder.Entity<CustomerEntity>().Property(c => c.Email)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<CustomerEntity>().Property(c => c.PhoneNumber)
+                .IsRequired()
+                .HasMaxLength(15);
+
+            modelBuilder.Entity<CustomerEntity>().Property(c => c.Country);
+
+          
 
 
             // Seed data

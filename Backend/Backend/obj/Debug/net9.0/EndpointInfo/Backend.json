@@ -56,6 +56,35 @@
         "tags": [
           "Rooms"
         ],
+        "parameters": [
+          {
+            "name": "roomType",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": -1
+            }
+          },
+          {
+            "name": "isAvailable",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": -1
+            }
+          },
+          {
+            "name": "capacity",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": -1
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
