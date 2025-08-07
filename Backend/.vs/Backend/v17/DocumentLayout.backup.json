@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\data\\repositories\\roomsqlserverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\data\\repositories\\roomsqlserverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|c:\\users\\deina\\documents\\github\\hotel-management-dashboard\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03F72535-3180-46F8-AA90-FEC5766AC5D2}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RoomSqlServerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Repositories\\RoomSqlServerRepository.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\Repositories\\RoomSqlServerRepository.cs",
+              "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Data\\Repositories\\RoomSqlServerRepository.cs",
+              "RelativeToolTip": "Backend\\Data\\Repositories\\RoomSqlServerRepository.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAuwEwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T17:13:59.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
               "ToolTip": "C:\\Users\\Deina\\Documents\\GitHub\\Hotel-Management-Dashboard\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAcwCgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwCgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T18:13:56.809Z",
               "EditorCaption": ""

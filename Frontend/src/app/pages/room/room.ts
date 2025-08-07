@@ -15,6 +15,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { DialogService } from '../../services/dialog-service';
 import { AddUpdateRoomDialog } from '../../dialogs/add-update-room-dialog/add-update-room-dialog';
 import { Room } from '../../models/room.model';
+import { RoomsFilter } from './rooms.filter';
+import { RoomTypeService } from '../../services/room-type-service';
+import { RoomType } from '../../models/roomtype.model';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-room',
@@ -26,6 +32,9 @@ import { Room } from '../../models/room.model';
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule,
   ],
   templateUrl: './room.html',
   styleUrl: './room.scss',
@@ -43,15 +52,23 @@ export class RoomComponent implements OnInit {
     'actions',
   ];
 
+  filter = new RoomsFilter();
+  roomCapacities: number[] = [1, 2, 3, 4, 5];
+  roomTypes: RoomType[] = [];
+
   constructor(
     private _roomService: RoomService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private roomTypeService: RoomTypeService
   ) {
-    this.data = new RoomDataSource(_roomService);
+    this.data = new RoomDataSource(_roomService, dialogService, this.filter);
   }
 
   ngOnInit(): void {
     this.data.loadRooms();
+    this.roomTypeService
+      .getAll()
+      .subscribe((response) => (this.roomTypes = response.items));
   }
 
   add() {

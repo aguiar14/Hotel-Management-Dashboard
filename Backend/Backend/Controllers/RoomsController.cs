@@ -30,10 +30,10 @@ namespace Backend.Controllers
 
 
         [HttpGet]
-        public Task<ApiResponse<Room>> Get()
+        public Task<ApiResponse<Room>> Get([FromQuery ]int roomType =-1, [FromQuery ]int isAvailable=-1, [FromQuery] int capacity=-1)
         {
          
-            return _roomRepository.GetRoomsAsync();
+            return _roomRepository.GetRoomsAsync( roomType,  isAvailable, capacity);
         }
 
 
