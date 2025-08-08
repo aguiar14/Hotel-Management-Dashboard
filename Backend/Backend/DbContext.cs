@@ -10,6 +10,7 @@ namespace Backend
 
         public DbSet<RoomEntity> Room { get; set; }
         public DbSet<RoomTypeEntity> RoomType { get; set; }
+        public DbSet<CustomerEntity> Customer { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
