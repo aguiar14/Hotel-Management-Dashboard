@@ -87,7 +87,7 @@ export class RoomComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
-        this._roomService.add(result).subscribe((a) => this.data.loadRooms());
+        this._roomService.add(result).subscribe(() => this.data.loadRooms());
       }
     });
   }
@@ -106,7 +106,7 @@ export class RoomComponent implements OnInit {
     });
   }
 
-  deleteRoom(arg0: any) {
+  deleteRoom(id: number) {
     throw new Error('Method not implemented.');
   }
 }

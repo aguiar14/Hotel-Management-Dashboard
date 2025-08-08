@@ -31,7 +31,6 @@ import { RoomTypeService } from '../../services/room-type-service';
 
 @Component({
   selector: 'app-add-update-room-dialog',
-  providers: [provideNativeDateAdapter()],
   imports: [
     MatFormFieldModule,
     MatInputModule,
