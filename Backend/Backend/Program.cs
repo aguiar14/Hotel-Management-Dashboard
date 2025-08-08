@@ -14,6 +14,8 @@ builder.Services.AddDbContext<DbContext>(options => options.UseSqlServer(builder
 
 builder.Services.AddTransient<IRoomRepository, RoomSqlServerRepository>();
 builder.Services.AddTransient<IRoomTypeRepository, RoomTypeSqlServerRepository>();
+builder.Services.AddTransient<ICustomerRepository, CustomerSqlReposistory>();
+
 
 builder.Services.AddControllers();
 
