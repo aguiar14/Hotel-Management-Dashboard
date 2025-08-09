@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { CustomerDataSource } from './customer.datasource';
 import { CustomerService } from '../../services/customer-service';
 import { AddUpdateCustomerDialog } from '../../dialogs/add-update-customer-dialog/add-update-customer-dialog';
+import { ConfirmDeleteDialog } from '../../dialogs/confirm-delete-dialog/confirm-delete-dialog';
 
 @Component({
   selector: 'app-customer',
@@ -98,6 +99,15 @@ export class CustomerComponent implements OnInit {
     });
   }
   deleteCustomer(id: number) {
-    throw new Error('Method not implemented.');
+    const dialogRef = this.dialogService.open(ConfirmDeleteDialog, {
+      data: 'Are you sure you want to delete this customer from the database?',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == true) {
+        this._customerService.delete(id).subscribe(() => {
+          this.data.loadCustomers();
+        });
+      }
+    });
   }
 }

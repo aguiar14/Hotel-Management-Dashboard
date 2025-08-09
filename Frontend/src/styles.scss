@@ -38,3 +38,18 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.filters-conteiner {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.filters-conteiner .filters {
+  display: flex;
+  gap: 10px;
+}
+
+.example-container {
+  padding: 15px;
+}
