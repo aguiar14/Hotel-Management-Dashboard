@@ -11,6 +11,7 @@ namespace Backend
         public DbSet<RoomEntity> Room { get; set; }
         public DbSet<RoomTypeEntity> RoomType { get; set; }
         public DbSet<CustomerEntity> Customer { get; set; }
+        public DbSet<BookingEntity> Booking { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +65,7 @@ namespace Backend
                 .IsRequired()
                 .HasMaxLength(500);
 
+
             modelBuilder.Entity<RoomEntity>()
                 .HasOne(r => r.RoomType)
                 .WithMany()
@@ -95,10 +97,41 @@ namespace Backend
 
             modelBuilder.Entity<CustomerEntity>().Property(c => c.Country);
 
-          
 
 
-            // Seed data
+          //--------------------  Booking -----------------
+
+
+            modelBuilder.Entity<BookingEntity>().ToTable("Bookings");
+
+            modelBuilder.Entity<BookingEntity>().HasKey(b => b.Id);
+
+            modelBuilder.Entity<BookingEntity>().Property(b=>b.Notes)
+                .HasMaxLength(500);
+
+            modelBuilder.Entity<BookingEntity>().HasOne(b => b.Customer)
+                    .WithMany()
+                    .HasForeignKey(b => b.CustomerId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+            modelBuilder.Entity<BookingEntity>().HasOne(b => b.Room)
+                .WithMany()
+                .HasForeignKey(b => b.RoomId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+            modelBuilder.Entity<BookingEntity>().Property(b => b.CheckInDate)
+                .IsRequired();
+
+            modelBuilder.Entity<BookingEntity>().Property(b => b.CheckOutDate)
+                .IsRequired();
+
+            modelBuilder.Entity<BookingEntity>().Property(b => b.TotalPrice);
+
+
+
+            // --------------------------  Seed data --------------------------------------
 
             modelBuilder.Entity<RoomTypeEntity>().HasData(
                 new RoomTypeEntity
