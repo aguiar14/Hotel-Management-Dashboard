@@ -127,6 +127,8 @@ namespace Backend
             modelBuilder.Entity<BookingEntity>().Property(b => b.CheckOutDate)
                 .IsRequired();
 
+            modelBuilder.Entity<BookingEntity>().Property(b => b.Status);
+
             modelBuilder.Entity<BookingEntity>().Property(b => b.TotalPrice);
 
 

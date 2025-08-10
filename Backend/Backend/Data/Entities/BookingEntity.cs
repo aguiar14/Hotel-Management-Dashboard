@@ -14,6 +14,8 @@ namespace Backend.Data.Entities
         public int RoomId { get; set; }
         [Required] public DateTime CheckInDate { get; set; }
         [Required] public DateTime CheckOutDate { get; set; }
+
+        public string? Status { get; set; }
         [Required] public decimal TotalPrice { get; set; }
 
         public DateTime CreatedAt { get; set; }

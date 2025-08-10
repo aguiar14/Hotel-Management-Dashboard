@@ -10,6 +10,7 @@ namespace Backend.Controllers.Post
         public Room? Room { get; set; } = null;
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+        public string? Status { get; set; }
         public decimal TotalPrice { get; set; } = 0;
 
         public Booking ToBookingModel()
@@ -22,6 +23,7 @@ namespace Backend.Controllers.Post
                 Room = this.Room,
                 CheckInDate = this.CheckInDate,
                 CheckOutDate = this.CheckOutDate,
+                Status = this.Status ?? "Pending", // Default status is "Pending"
                 TotalPrice = this.TotalPrice
             };
         }
