@@ -1,61 +1,18 @@
 ﻿using Backend.Data.Entities;
+using Backend.Interfaces;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 using static Azure.Core.HttpHeader;
 
 namespace Backend.Data.Repositories
 {
-    public class BookingSqlRepository: IBookingRepositoty
+    public class BookingSqlRepository: IBookingRepository
     {
         private readonly DbContext _context;
 
         public BookingSqlRepository(DbContext dbContext)
         {
             _context = dbContext;
-        }
-
-        public async Task<Booking> CreateBookingAsync(Booking booking)
-        {
-
-            var exisitingBookedRoom = await _context.Booking
-                .Where(b => b.RoomId == booking.Room.Id &&
-                            b.CheckInDate < booking.CheckOutDate &&
-                            b.CheckOutDate > booking.CheckInDate &&
-                            b.Status != "Cancelled")
-                .FirstOrDefaultAsync();
-
-            var roomTobebooked = await _context.Room.FirstOrDefaultAsync(r => r.Id == booking.Room.Id);
-
-            if (exisitingBookedRoom == null)
-            {
-                throw new InvalidOperationException("The room is already booked for the selected dates.");
-            }
-    
-            var entityBooking = new BookingEntity
-            {
-                Notes = booking.Notes,
-                CustomerId = booking.Customer.Id,
-                RoomId = booking.Room.Id,
-                CheckInDate = booking.CheckInDate,
-                CheckOutDate = booking.CheckOutDate,
-                Status = booking.Status,
-                TotalPrice = booking.TotalPrice,
-                CreatedAt = DateTime.UtcNow,
-            };
-
-            roomTobebooked.IsAvailable = false;
-
-            _context.Booking.Add(entityBooking);
-            _context.Room.Update(roomTobebooked);
-           
-            await _context.SaveChangesAsync();
-            booking.Id = entityBooking.Id;
-
-            return booking;
-           
-
-            
-
         }
 
         public async Task<Booking?> GetBookingByIdAsync(int id)
@@ -103,7 +60,7 @@ namespace Backend.Data.Repositories
             return booking ?? null;
         }
 
-        public async Task<ApiResponse<Booking>> GetBookingsAsync(int roomId, int customerId, DateTime? checkInDate, DateTime? checkOutDate, string status)
+        public async Task<ApiResponse<Booking>> GetBookingsAsync(int roomId, int customerId, DateTime checkInDate, DateTime checkOutDate, string status)
         {
             IQueryable<BookingEntity> query = _context.Booking;
 
@@ -120,12 +77,12 @@ namespace Backend.Data.Repositories
 
             if (checkInDate != default(DateTime))
             {
-                query = query.Where(b => b.CheckInDate >= checkInDate.Value);
+                query = query.Where(b => b.CheckInDate >= checkInDate);
             }
 
             if (checkOutDate!= default(DateTime))
             {
-                query = query.Where(b => b.CheckOutDate == checkOutDate.Value);
+                query = query.Where(b => b.CheckOutDate == checkOutDate);
             }
 
             if (!string.IsNullOrEmpty(status))
@@ -181,6 +138,49 @@ namespace Backend.Data.Repositories
             };
         }
 
+        public async Task<Booking> CreateBookingAsync(Booking booking)
+        {
+
+            var exisitingBookedRoom = await _context.Booking
+                .Where(b => b.RoomId == booking.Room.Id &&
+                            b.CheckInDate < booking.CheckOutDate &&
+                            b.CheckOutDate > booking.CheckInDate &&
+                            b.Status != "Cancelled")
+                .FirstOrDefaultAsync();
+
+            var roomTobebooked = await _context.Room.FirstOrDefaultAsync(r => r.Id == booking.Room.Id);
+
+            if (exisitingBookedRoom == null)
+            {
+                throw new InvalidOperationException("The room is already booked for the selected dates.");
+            }
+
+            var entityBooking = new BookingEntity
+            {
+                Notes = booking.Notes,
+                CustomerId = booking.Customer.Id,
+                RoomId = booking.Room.Id,
+                CheckInDate = booking.CheckInDate,
+                CheckOutDate = booking.CheckOutDate,
+                Status = booking.Status,
+                TotalPrice = booking.TotalPrice,
+                CreatedAt = DateTime.UtcNow,
+            };
+
+            roomTobebooked.IsAvailable = false;
+
+            _context.Booking.Add(entityBooking);
+            _context.Room.Update(roomTobebooked);
+
+            await _context.SaveChangesAsync();
+            booking.Id = entityBooking.Id;
+
+            return booking;
+
+
+
+
+        }
         public async Task<Booking?> UpdateBookingAsync(Booking booking)
         {
             var exisitingBooking = await _context.Booking.FirstOrDefaultAsync(b => b.Id == booking.Id);
@@ -235,5 +235,7 @@ namespace Backend.Data.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+
     }
 }
