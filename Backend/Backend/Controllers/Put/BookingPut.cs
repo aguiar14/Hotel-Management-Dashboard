@@ -9,7 +9,9 @@ namespace Backend.Controllers.Put
         public Room? Room { get; set; } = null;
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+        public string? Status { get; set; }
         public decimal TotalPrice { get; set; } = 0;
+
 
         public Booking ToBookingModel(int id)
         {
@@ -21,6 +23,7 @@ namespace Backend.Controllers.Put
                 Room = this.Room,
                 CheckInDate = this.CheckInDate,
                 CheckOutDate = this.CheckOutDate,
+                Status = this.Status ,
                 TotalPrice = this.TotalPrice
             };
         }

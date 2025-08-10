@@ -9,6 +9,8 @@
         public Room? Room { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
+
+        public string Status { get; set; } = "Pending"; // Possible values: Pending, Confirmed, Cancelled
         public decimal TotalPrice { get; set; }
     }
 }
