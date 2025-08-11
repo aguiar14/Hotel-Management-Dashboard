@@ -66,14 +66,14 @@ namespace Backend.Controllers
         }
 
         [HttpPut("{bookingId}/confirm")]
-        public async Task<ActionResult<bool>> Confirm(int bookingId)
+        public async Task<ActionResult<bool>> Confirm(Booking booking, int bookingId)
         {
             var confirmed = await _bookingRepository.ConfirmBookingAsync(bookingId);
             return confirmed ? Ok(true) : NotFound();
         }
 
         [HttpPut("{bookingId}/cancel")]
-        public async Task<ActionResult<bool>> Cancel(int bookingId)
+        public async Task<ActionResult<bool>> Cancel(Booking booking, int bookingId)
         {
             var cancelled = await _bookingRepository.CancelBookingAsync(bookingId);
             return cancelled ? Ok(true) : NotFound();
