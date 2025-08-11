@@ -150,7 +150,7 @@ namespace Backend.Data.Repositories
 
             var roomTobebooked = await _context.Room.FirstOrDefaultAsync(r => r.Id == booking.Room.Id);
 
-            if (exisitingBookedRoom == null)
+            if (exisitingBookedRoom != null)
             {
                 throw new InvalidOperationException("The room is already booked for the selected dates.");
             }

@@ -137,6 +137,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "booking",
+        "Type": "Backend.Models.Booking",
+        "IsRequired": true
+      },
+      {
         "Name": "bookingId",
         "Type": "System.Int32",
         "IsRequired": true
@@ -162,6 +167,11 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "booking",
+        "Type": "Backend.Models.Booking",
+        "IsRequired": true
+      },
       {
         "Name": "bookingId",
         "Type": "System.Int32",
