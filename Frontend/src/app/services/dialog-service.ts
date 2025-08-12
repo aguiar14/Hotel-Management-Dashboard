@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GlobalLoading } from '../dialogs/global-loading/global-loading';
+import { GlobalLoading } from '../core/global-loading/global-loading';
 import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({
