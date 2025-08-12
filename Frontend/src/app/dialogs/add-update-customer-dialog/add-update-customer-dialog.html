@@ -1,0 +1,141 @@
+<h2 mat-dialog-title>{{ customer.id ? "Edit" : "Add new" }} Customer</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="example-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Firstname</mat-label>
+      <input matInput formControlName="firstName" type="text" />
+
+      <div
+        *ngIf="
+          formControls['firstName'].touched && formControls['firstName'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['firstName'].errors &&
+            formControls['firstName'].errors['required']
+          "
+          >First name is required</span
+        >
+
+        <span
+          *ngIf="
+            formControls['firstName'].errors &&
+            formControls['firstName'].errors['minlength']
+          "
+          >Firstname must contains at least 2 caracters</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" type="text" />
+
+      <div
+        *ngIf="
+          formControls['lastName'].touched && formControls['lastName'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['lastName'].errors &&
+            formControls['lastName'].errors['required']
+          "
+          >lastName is required</span
+        >
+        <span
+          *ngIf="
+            formControls['lastName'].errors &&
+            formControls['lastName'].errors['minlength']
+          "
+          >Last name must contains at least 15</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+
+      <div
+        *ngIf="formControls['email'].touched && formControls['email'].invalid"
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['email'].errors &&
+            formControls['email'].errors['required']
+          "
+          >Email is required</span
+        >
+        <span
+          *ngIf="
+            formControls['email'].errors &&
+            formControls['email'].errors['email']
+          "
+          >Please eneter a valid email</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone number</mat-label>
+      <input matInput formControlName="phoneNumber" type="text" />
+
+      <div
+        *ngIf="
+          formControls['phoneNumber'].touched &&
+          formControls['phoneNumber'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['phoneNumber'].errors &&
+            formControls['phoneNumber'].errors['required']
+          "
+          >price Per Night is required</span
+        >
+        <span
+          *ngIf="
+            formControls['phoneNumber'].errors &&
+            formControls['phoneNumber'].errors['min']
+          "
+          >Price/Night must be min 7 caracters</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Country </mat-label>
+      <input matInput formControlName="country" type="text" />
+
+      <div
+        *ngIf="
+          formControls['country'].touched && formControls['country'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['country'].errors &&
+            formControls['country'].errors['min']
+          "
+          >Country must contain at least 3 caraters</span
+        >
+      </div>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button matButton (click)="dialogRef.close(null)">Cancel</button>
+  <button matButton cdkFocusInitial (click)="onSubmit()">
+    {{ customer.id ? "Edit" : "Add" }}
+  </button>
+  <!-- [disabled]="form.invalid || !roomTypes" -->
+</mat-dialog-actions>

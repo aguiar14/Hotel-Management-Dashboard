@@ -14,6 +14,9 @@ builder.Services.AddDbContext<DbContext>(options => options.UseSqlServer(builder
 
 builder.Services.AddTransient<IRoomRepository, RoomSqlServerRepository>();
 builder.Services.AddTransient<IRoomTypeRepository, RoomTypeSqlServerRepository>();
+builder.Services.AddTransient<ICustomerRepository, CustomerSqlReposistory>();
+builder.Services.AddTransient<IBookingRepository, BookingSqlRepository>();
+
 
 builder.Services.AddControllers();
 
@@ -39,6 +42,7 @@ var app = builder.Build();
 //    var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
 //    dbContext.Database.Migrate();
 //}
+
 
 // Configure the HTTP request pipeline.
 app.MapSwagger();

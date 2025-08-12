@@ -21,6 +21,7 @@ import { RoomType } from '../../models/roomtype.model';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { ConfirmDeleteDialog } from '../../dialogs/confirm-delete-dialog/confirm-delete-dialog';
 
 @Component({
   selector: 'app-room',
@@ -87,7 +88,7 @@ export class RoomComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
-        this._roomService.add(result).subscribe((a) => this.data.loadRooms());
+        this._roomService.add(result).subscribe(() => this.data.loadRooms());
       }
     });
   }
@@ -106,7 +107,16 @@ export class RoomComponent implements OnInit {
     });
   }
 
-  deleteRoom(arg0: any) {
-    throw new Error('Method not implemented.');
+  deleteRoom(id: number) {
+    const dialogRef = this.dialogService.open(ConfirmDeleteDialog, {
+      data: 'Are you sure you want to delete this room from the database?',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == true) {
+        this._roomService.delete(id).subscribe(() => {
+          this.data.loadRooms();
+        });
+      }
+    });
   }
 }

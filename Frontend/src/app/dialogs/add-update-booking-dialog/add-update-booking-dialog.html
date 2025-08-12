@@ -1,0 +1,230 @@
+<h2 mat-dialog-title>{{ booking.id ? "Edit" : "Add new" }} Booking</h2>
+<!-- <mat-progress-bar
+  *ngIf="roomTypes.length === 0"
+  mode="indeterminate"
+  color="primary"
+></mat-progress-bar> -->
+
+<mat-dialog-content>
+  <!-- *ngIf="roomTypes.length > 0" -->
+  <form [formGroup]="form" class="example-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <input matInput formControlName="notes" type="text" />
+
+      <div
+        *ngIf="formControls['notes'].touched && formControls['notes'].invalid"
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['notes'].errors &&
+            formControls['notes'].errors['minlength']
+          "
+          >Notes must have at least 15</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Customer</mat-label>
+      <input
+        type="text"
+        placeholder="Select the Customer"
+        aria-label="customer"
+        matInput
+        [formControl]="customerControll"
+        [matAutocomplete]="customer"
+        required="true"
+      />
+      <mat-autocomplete
+        #customer="matAutocomplete"
+        [displayWith]="displayCustomer"
+      >
+        @for (customer of filteredCustomers | async; track customer) {
+        <mat-option [value]="customer"
+          >{{ customer.firstName }} {{ customer.lastName }}
+        </mat-option>
+        }
+      </mat-autocomplete>
+
+      <div
+        *ngIf="
+          customerControll.touched && customerControll.hasError('required')
+        "
+        class="alert"
+      >
+        <span>Customer is required</span>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Room</mat-label>
+      <input
+        type="text"
+        placeholder="Select the room"
+        aria-label="room"
+        matInput
+        [formControl]="roomControll"
+        [matAutocomplete]="room"
+        required="true"
+      />
+      <mat-autocomplete #room="matAutocomplete" [displayWith]="displayRoom">
+        @for (room of filteredAvailabaleRooms | async; track room) {
+        <mat-option [value]="room">{{ room.number }} </mat-option>
+        }
+      </mat-autocomplete>
+
+      <div
+        *ngIf="formControls['room'].touched && formControls['room'].invalid"
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['room'].errors &&
+            formControls['room'].errors['required']
+          "
+          >Room number is required</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>CheckIn - CheckOut</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          formControlName="checkInDate"
+          placeholder="CheckIn"
+        />
+        <input
+          matEndDate
+          formControlName="checkOutDate"
+          placeholder="CheckOut"
+        />
+      </mat-date-range-input>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+      @if (formControls['checkInDate'].hasError('matStartDateInvalid')) {
+      <mat-error>Invalid start date</mat-error>
+      } @if (formControls['checkOutDate'].hasError('matEndDateInvalid')) {
+      <mat-error>Invalid end date</mat-error>
+      }
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Capacity</mat-label>
+      <input matInput formControlName="capacity" type="number" />
+
+      <div
+        *ngIf="
+          formControls['capacity'].touched && formControls['capacity'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['capacity'].errors &&
+            formControls['capacity'].errors['required']
+          "
+          >Capacity is required</span
+        >
+        <span
+          *ngIf="
+            formControls['capacity'].errors &&
+            formControls['capacity'].errors['min']
+          "
+          >Capacity must be min 1</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Price/Night</mat-label>
+      <input matInput formControlName="pricePerNight" type="number" />
+
+      <div
+        *ngIf="
+          formControls['pricePerNight'].touched &&
+          formControls['pricePerNight'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['pricePerNight'].errors &&
+            formControls['pricePerNight'].errors['required']
+          "
+          >price Per Night is required</span
+        >
+        <span
+          *ngIf="
+            formControls['pricePerNight'].errors &&
+            formControls['pricePerNight'].errors['min']
+          "
+          >Price/Night must be min 50</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Availability</mat-label>
+      <mat-select formControlName="isAvailable">
+        <mat-option [value]="true">Available</mat-option>
+        <mat-option [value]="false">Not Availble</mat-option>
+      </mat-select>
+
+      <div
+        *ngIf="
+          formControls['isAvailable'].touched &&
+          formControls['isAvailable'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['isAvailable'].errors &&
+            formControls['isAvailable'].errors['required']
+          "
+          >Availability is required</span
+        >
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Room Type</mat-label>
+      <mat-select formControlName="roomType">
+        @for (rt of roomTypes; track rt) {
+        <mat-option [value]="rt.id">{{ rt.name }}</mat-option>
+        }
+      </mat-select>
+
+      <div
+        *ngIf="
+          formControls['roomType'].touched && formControls['roomType'].invalid
+        "
+        class="alert"
+      >
+        <span
+          *ngIf="
+            formControls['roomType'].errors &&
+            formControls['roomType'].errors['required']
+          "
+          >Room type is required</span
+        >
+      </div>
+    </mat-form-field> -->
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button matButton (click)="_dialogRef.close(null)">Cancel</button>
+  <button matButton cdkFocusInitial (click)="onSubmit()">
+    {{ booking.id ? "Edit" : "Add" }}
+  </button>
+  <!-- [disabled]="form.invalid || !roomTypes" -->
+</mat-dialog-actions>
