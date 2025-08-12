@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { ConfirmDeleteDialog } from '../../dialogs/confirm-delete-dialog/confirm-delete-dialog';
 import { BookingDataSource } from './booking.datasource';
 import { BookingService } from '../../services/booking-service';
+import { AddUpdateBookingDialog } from '../../dialogs/add-update-booking-dialog/add-update-booking-dialog';
+import { Booking } from '../../models/booking.model';
 
 @Component({
   selector: 'app-booking',
@@ -36,7 +38,7 @@ import { BookingService } from '../../services/booking-service';
   templateUrl: './booking.html',
   styleUrl: './booking.scss',
 })
-export class Booking implements OnInit {
+export class BookingComponenet implements OnInit {
   data: BookingDataSource;
   resultsLength: number = 10;
 
@@ -54,7 +56,7 @@ export class Booking implements OnInit {
 
   constructor(
     private _bookingService: BookingService,
-    _dialogService: DialogService
+    public _dialogService: DialogService
   ) {
     this.data = new BookingDataSource(_bookingService, _dialogService);
   }
@@ -63,10 +65,49 @@ export class Booking implements OnInit {
     this.data.loadBookings();
   }
 
+  add() {
+    var booking = {
+      notes: '',
+      customer: undefined,
+      room: undefined,
+      checkInDate: '',
+      checkOutDate: '',
+      status: '',
+      totalPrice: '',
+    };
+
+    const dialogRef = this._dialogService.open(AddUpdateBookingDialog, {
+      data: booking,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== undefined && result !== null) {
+        console.log(result);
+        this._bookingService.add(result).subscribe({
+          next: (res) => this.data.loadBookings(),
+
+          error: (err) => {
+            console.error('err: ', err);
+          },
+        });
+      }
+    });
+  }
+
   cancel(arg0: any) {
     throw new Error('Method not implemented.');
   }
-  edit(_t81: any) {
-    throw new Error('Method not implemented.');
+  edit(bookingEdit: Booking) {
+    const dialogRef = this._dialogService.open(AddUpdateBookingDialog, {
+      data: bookingEdit,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result != undefined && result !== null) {
+        this._bookingService
+          .edit(bookingEdit.id, result)
+          .subscribe(() => this.data.loadBookings());
+      }
+    });
   }
 }

@@ -31,7 +31,6 @@ export class BookingDataSource extends DataSource<Booking> {
       .pipe(delay(300))
       .subscribe(
         (response: ApiResponse<Booking>) => {
-          console.log(response.items);
           this.setData(response.items);
           this.dialogService.hideLoading();
         },
