@@ -23,6 +23,10 @@ export class RoomService {
     });
   }
 
+  getRooms(): Observable<ApiResponse<Room>> {
+    return this.httpclient.get<ApiResponse<Room>>(this.apiUrl);
+  }
+
   add(room: Room): Observable<any> {
     return this.httpclient.post(this.apiUrl, room);
   }

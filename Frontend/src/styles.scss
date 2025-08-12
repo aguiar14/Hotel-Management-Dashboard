@@ -39,7 +39,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-
 .filters-conteiner {
   padding-top: 10px;
   display: flex;
@@ -52,4 +51,15 @@ body {
 
 .example-container {
   padding: 15px;
+}
+
+.example-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.alert {
+  color: brown;
+  font-size: 12px;
 }

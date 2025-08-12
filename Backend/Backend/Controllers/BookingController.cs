@@ -22,16 +22,10 @@ namespace Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Booking>> Add(Booking booking)
         {
-                try
-            {
+          
                 var newBooking = await _bookingRepository.CreateBookingAsync(booking);
                 return Created(newBooking.Id.ToString(), newBooking);
-            }
-            catch (InvalidOperationException ex)
-            {
-                logger.LogError(ex, "Error creating booking");
-                return BadRequest(ex.Message);
-            }
+           
         }
 
         [HttpGet]
